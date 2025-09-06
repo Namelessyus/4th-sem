@@ -66,6 +66,22 @@ console.log("Sabda",b)
 console.log("Total",c)
 console.log("Total Total",t)
 
+//specifying count
+let anmol_count = 0;
+let sabda_count = 0;
+let total_count = 0;
+for(let i = 0; i < names.length; i++){
+    if(names[i] == "Anmol"){
+        anmol_count++;
+    } else if (names[i] == "Sabda"){
+        sabda_count++;
+    }
+    total_count++;
+}
+console.log("Anmol Count: ", anmol_count);
+console.log("Sabda Count: ", sabda_count);
+console.log("Total Count: ", total_count);
+
 //foreach loop
 const items = ["Books","Watches","Mobiles","Baskets","Tools"];
 let count = 1;
@@ -108,14 +124,19 @@ const cities_lower = cities.map((city) => {
 console.log("Cities:,cities");
 console.log("Cities LowerCase:",cities_lower);
 
-//6. filter() - creates new array by filtering the elements
-const cases = ["KATHMANDU","dharan","LALITPUR","BIRTAMOD","pokhara"];
-let j = 0;
-const lower_cases = cases.filter((city) => {
-city === city.toLowerCase();
-return city;
+// 6. filter() - creates new array by filtering the elements
+const cases = ["KATHMANDU", "dharan", "LALITPUR", "BIRTAMOD", "pokhara"];
+// const lower_cases = cases.filter((city) => {
+//     (city === city.toLowerCase() && isNaN(city));
+//     return city;
+// });
+// console.log("Cities Cases: ", cases);
+// console.log("Cities cases with filter: ", lower_cases);
 
+const lower_cases = cases.filter((city) => {
+    return city === city.toLowerCase() && isNaN(city);
 });
-console.log("Cities Cases:",cases);
-console.log("Cities cases with filter:",lower_cases);
+
+console.log("Cities Cases: ", cases);
+console.log("Cities cases with filter: ", lower_cases);
 
