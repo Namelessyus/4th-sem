@@ -1,7 +1,7 @@
 // Newton Raphson (NR) Method
 	    #include<stdio.h>
         #include<math.h>
-#include<stdlib.h>
+		#include<stdlib.h>
         
         #define f(x) (3*x-cos(x)-1)
         #define g(x) 3+sin(x)

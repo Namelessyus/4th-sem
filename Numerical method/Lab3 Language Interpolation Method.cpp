@@ -3,32 +3,31 @@
 #include <stdlib.h>
 
 int main(){
-	size_t n;
-	float xp;
-	float yp=0;
-	printf("Enter then number of data: ");
-	scanf("%zu",&n);
-	float *x = (float *)malloc(sizeof(float)*n);
-	float *y = (float *)malloc(sizeof(float)*n);
-	for(size_t i = 0; i<n ; i++){
-		printf("Input %zu x: ",i+1);
-		scanf("%f",&x[i]);
-		printf("Input %zu y: ",i+1);
-		scanf("%f",&y[i]);
+	int j,n,i;
+	float x[20],y[20],xp,p,yp=0;
+	printf("enter number of data (<20): ");
+	scanf("%d",&n);
+	
+	
+	for(i=1;i<=n;i++){
+		printf("enter x[%d] and y[%d]: ",i,i);
+		scanf("%f%f",&x[i],&y[i]);
 	}
-	printf("Input Interpolation point: ");
+	printf("enter interpolating point: ");
 	scanf("%f",&xp);
-	for(size_t i = 0; i < n; i++){
-		float p = 1;
-		for(size_t j = 0; j<n; j++){
+
+	for(i=1;i<=n;i++){
+		p=1;
+		for(j=1;j<=n;j++){
 			if(i!=j){
 				p=p*(xp-x[j])/(x[i]-x[j]);
+			
 			}
 		}
-		yp=yp+p*y[i];
+			yp=yp+p*y[i];
 	}
-	printf("Interpolation: %f",yp);
-	free(x);
-	free(y);
+	printf("%f",yp);
 	return 0;
+
 }
+
