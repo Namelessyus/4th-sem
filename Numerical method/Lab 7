@@ -1,0 +1,66 @@
+#include<stdio.h>
+#include<math.h>
+#define f1(x,y,z)(17-y+2*z)/20
+#define f2(x,y,z)(-18-3*x+z)/20
+#define f3(x,y,z)(25-2*x+3*y)/20
+int main() {
+int count=0;
+float e,x0=0,y0=0,z0=0,x1,y1,z1,e1,e2,e3;
+printf("Enter the error tolerance");
+scanf("%f",&e);
+
+do{
+x1=f1(x0,y0,z0);
+y1=f2(x0,y0,z0);
+z1=f3(x0,y0,z0);
+e1=fabs(x0-x1);
+e2=fabs(y0-y1);
+e3=fabs(z0-z1);
+x0=x1;
+y0=y1;
+z0=z1;
+count++;
+}while(e1>e && e2>e && e3>e);
+printf("hence\n x=%.3f\n y=%.3f\n z=%.3f",x1,y1,z1);
+printf("\ntotal iteration: %d", count);
+return 0;
+}
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+#define f1(x,y,z) ( (17 - (y) + 2*(z)) / 20.0 )
+#define f2(x,y,z) ( (-18 - 3*(x) + (z)) / 20.0 )
+#define f3(x,y,z) ( (25 - 2*(x) + 3*(y)) / 20.0 )
+
+int main() {
+    float x0, y0, z0, x1, y1, z1, e, e1, e2, e3;
+
+    printf("Enter tolerance error: ");
+    scanf("%f", &e);
+
+    x0 = y0 = z0 = 0;  
+
+    int count = 1;
+    do {
+        x1 = f1(x0, y0, z0);
+        y1 = f2(x1, y0, z0);  
+        z1 = f3(x1, y1, z0);
+       
+        e1 = fabs(x0 - x1);
+        e2 = fabs(y0 - y1);
+        e3 = fabs(z0 - z1);
+   
+        x0 = x1;
+        y0 = y1;
+        z0 = z1;
+
+        count++;
+    } while (e1 > e && e2 > e && e3 > e);
+
+    printf("\nSolution:\n");
+    printf("x = %.3f\n y= %.3f\n z= %.3f", x1, y1, z1);
+printf("\nTotal number of iteration:%d",count);
+    return 0;
+}
