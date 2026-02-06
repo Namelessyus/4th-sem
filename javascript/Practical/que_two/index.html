@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Inter-College BCA Futsal Registration</title>
+    <style>
+        span {
+            color: red;
+            font-size: 14px;
+        }
+        body {
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Inter-College BCA Futsal Competition Registration</h2>
+
+<form id="registrationForm" method="POST" action="process_registration.php" onsubmit="return validateForm(event)">
+
+    <label>Full Name *</label><br>
+    <input type="text" id="fullName" name="fullName"><br>
+    <span id="nameError"></span><br>
+
+    <label>Email *</label><br>
+    <input type="email" id="email" name="email"><br>
+    <span id="emailError"></span><br>
+
+    <label>Phone Number *</label><br>
+    <input type="text" id="phone" name="phone"><br>
+    <span id="phoneError"></span><br>
+
+    <label>College Name *</label><br>
+    <input type="text" id="college" name="college"><br>
+    <span id="collegeError"></span><br>
+
+    <label>Roll Number *</label><br>
+    <input type="text" id="rollNumber" name="rollNumber"><br>
+    <span id="rollError"></span><br>
+
+    <label>Playing Position *</label><br>
+    <select id="position" name="position">
+        <option value="">-- Select Position --</option>
+        <option value="Goalkeeper">Goalkeeper</option>
+        <option value="Defender">Defender</option>
+        <option value="Midfielder">Midfielder</option>
+        <option value="Forward">Forward</option>
+    </select><br>
+    <span id="positionError"></span><br>
+
+    <label>Experience Level *</label><br>
+    <select id="experience" name="experience">
+        <option value="">-- Select Level --</option>
+        <option value="Beginner">Beginner</option>
+        <option value="Intermediate">Intermediate</option>
+        <option value="Advanced">Advanced</option>
+    </select><br>
+    <span id="experienceError"></span><br>
+
+    <label>Additional Information</label><br>
+    <textarea name="message" rows="3"></textarea><br><br>
+
+    <button type="submit">Register</button>
+
+</form>
+
+<script>
+function validateForm(event) {
+    event.preventDefault();
+    let valid = true;
+
+    document.querySelectorAll("span").forEach(e => e.innerHTML = "");
+
+    if (fullName.value.trim() === "") {
+        nameError.innerHTML = "Full name is required";
+        valid = false;
+    }
+
+    if (email.value.trim() === "") {
+        emailError.innerHTML = "Email is required";
+        valid = false;
+    }
+
+    if (phone.value.trim().length !== 10 || isNaN(phone.value)) {
+        phoneError.innerHTML = "Phone number must be 10 digits";
+        valid = false;
+    }
+
+    if (college.value.trim() === "") {
+        collegeError.innerHTML = "College name is required";
+        valid = false;
+    }
+
+    if (rollNumber.value.trim() === "") {
+        rollError.innerHTML = "Roll number is required";
+        valid = false;
+    }
+
+    if (position.value === "") {
+        positionError.innerHTML = "Please select a position";
+        valid = false;
+    }
+
+    if (experience.value === "") {
+        experienceError.innerHTML = "Please select experience level";
+        valid = false;
+    }
+
+    if (valid) {
+        document.getElementById("registrationForm").submit();
+    }
+
+    return false;
+}
+</script>
+
+</body>
+</html>

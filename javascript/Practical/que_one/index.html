@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>BCA Cup 2026 Banner</title>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <style>
+        #bannerImg {
+            display: none;
+            width: 300px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div>
+    <!-- Paragraph describing event banner -->
+    <p id="bannerText">
+        This banner represents the upcoming inter-college BCA Cup 2026 futsal event.
+        <br>
+        <img id="bannerImg" src="banner.jpg" alt="BCA Cup Banner">
+        <br>
+        <span id="bannerMessage"></span>
+    </p>
+
+    <!-- Buttons -->
+    <button id="displayBanner">Show Banner</button>
+    <button id="hideBanner">Hide Banner</button>
+</div>
+
+<script>
+    // Function to show banner
+    function showBanner() {
+        $("#bannerImg").show();
+        $("#bannerMessage").text("BCA Cup 2026 Banner");
+    }
+
+    // Function to hide banner
+    function hideBanner() {
+        $("#bannerImg").hide();
+        $("#bannerMessage").text("");
+    }
+
+    // jQuery event listeners
+    $(document).ready(function () {
+        $("#displayBanner").click(showBanner);
+        $("#hideBanner").click(hideBanner);
+    });
+</script>
+
+</body>
+</html>
+
+database 
+-- Create Database
+CREATE DATABASE futsal_db;
+
+-- Use Database
+USE futsal_db;
+
+-- Create Participants Table
+CREATE TABLE participants (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    full_name VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    phone VARCHAR(15) NOT NULL,
+    college VARCHAR(100) NOT NULL,
+    roll_number VARCHAR(50) NOT NULL,
+    position VARCHAR(50) NOT NULL,
+    experience VARCHAR(50) NOT NULL,
+    message TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
