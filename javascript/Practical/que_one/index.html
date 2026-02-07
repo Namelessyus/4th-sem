@@ -53,23 +53,3 @@
 </body>
 </html>
 
-database 
--- Create Database
-CREATE DATABASE futsal_db;
-
--- Use Database
-USE futsal_db;
-
--- Create Participants Table
-CREATE TABLE participants (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    full_name VARCHAR(100) NOT NULL,
-    email VARCHAR(100) NOT NULL,
-    phone VARCHAR(15) NOT NULL,
-    college VARCHAR(100) NOT NULL,
-    roll_number VARCHAR(50) NOT NULL,
-    position VARCHAR(50) NOT NULL,
-    experience VARCHAR(50) NOT NULL,
-    message TEXT,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
