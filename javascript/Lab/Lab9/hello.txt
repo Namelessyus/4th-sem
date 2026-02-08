@@ -1,2 +1,2 @@
-Hello, All! DAVWe are learning PHP file handling.
+Hello, All! DAV We are learning PHP file handling.
 Its just a sample code.
