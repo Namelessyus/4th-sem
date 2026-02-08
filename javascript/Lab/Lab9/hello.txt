@@ -1,0 +1,2 @@
+Hello, All! DAVWe are learning PHP file handling.
+Its just a sample code.

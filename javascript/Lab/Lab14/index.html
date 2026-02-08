@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>jquery demo</title>
+</head>
+
+<body>
+    <h1>DAV jquery Session | BCA - TU</h1>
+    <input type="text" name="demo" id="demo">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $("h1").hover(
+                function () {
+                    $(this).css(
+                        "color",
+                        "green"
+                    );
+                },
+                function () {
+                    $(this).css(
+                        "color",
+                        "aliceblue"
+                    );
+                }
+            );
+        });
+    </script>
+</body>
+</html>

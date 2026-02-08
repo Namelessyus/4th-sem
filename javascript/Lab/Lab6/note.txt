@@ -1,0 +1,83 @@
+User Interaction Events
+These events are triggered by user actions such as clicking, hovering, or typing.
+
+click: Fired when a user clicks on an element.
+dblclick: Fired when a user double-clicks on an element.
+mouseover: Fired when a user moves the mouse over an element.
+mouseout: Fired when a user moves the mouse away from an element.
+keydown: Fired when a user presses a key on the keyboard.
+keyup: Fired when a user releases a key on the keyboard.
+
+Example:
+const button = document.querySelector("button");
+button.addEventListener("click", () => {
+alert("Button clicked!");
+});
+
+
+Form Events
+These events are related to form elements and their interactions.
+
+submit: Fired when a form is submitted.
+change: Fired when the value of an input element changes.
+focus: Fired when an element gains focus.
+blur: Fired when an element loses focus.
+
+Example:
+const form = document.querySelector("form");
+form.addEventListener("submit", (event) => {
+event.preventDefault(); // Prevents the form from submitting
+alert("Form submitted!");
+});
+
+Window Events
+These events are related to the browser window and its state.
+
+load: Fired when the entire page has loaded.
+resize: Fired when the browser window is resized.
+scroll: Fired when the user scrolls the page.
+unload: Fired when the user leaves the page.
+
+Example:
+window.addEventListener("load", () => {
+console.log("Page fully loaded");
+});
+
+Mouse Events
+These events are triggered by mouse actions.
+
+mousedown: Fired when a mouse button is pressed.
+mouseup: Fired when a mouse button is released.
+mousemove: Fired when the mouse is moved.
+
+Example:
+document.addEventListener("mousemove", (event) => {
+console.log(`Mouse moved to (${event.clientX}, ${event.clientY})`);
+});
+
+Keyboard Events
+These events are triggered by keyboard actions.
+
+keypress: Fired when a key is pressed down.
+keydown: Fired when a key is pressed down.
+keyup: Fired when a key is released.
+
+Example:
+
+document.addEventListener("keydown", (event) => {
+console.log(`Key pressed: ${event.key}`);
+});
+
+Media Events
+These events are related to media elements like audio and video.
+
+play: Fired when the media starts playing.
+pause: Fired when the media is paused.
+ended: Fired when the media has finished playing.
+
+Example:
+
+const video = document.querySelector("video");
+video.addEventListener("play", () => {
+console.log("Video started playing");
+});
